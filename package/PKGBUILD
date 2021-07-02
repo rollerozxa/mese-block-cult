@@ -1,0 +1,26 @@
+# Maintainer: ROllerozxa <temporaryemail4meh@gmail.com>
+pkgname=mese-block-cult
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="The Mese Block Cult"
+arch=(any)
+url='https://github.com/rollerozxa/mese-block-cult'
+depends=('electron')
+makedepends=('asar')
+source=("${pkgname}.sh"
+        "${pkgname}.desktop")
+noextract=()
+md5sums=('SKIP' 'SKIP')
+_appdir="../../app/"
+
+build() {
+	asar p "${_appdir}" "${srcdir}/app.asar"
+}
+
+package() {
+	install -Dm755 "${srcdir}/${pkgname}.sh" "${pkgdir}/usr/bin/${pkgname}"
+	install -Dm644 "${srcdir}/${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+
+	install -Dm644 "${_appdir}/mese_block.png" "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
+	install -Dm644 "${srcdir}/app.asar" "${pkgdir}/usr/share/${pkgname}/app.asar"
+}

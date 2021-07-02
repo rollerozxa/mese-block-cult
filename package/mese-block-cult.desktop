@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=The Mese Block Cult
+Comment=The Mese Block Cult
+Exec=mese-block-cult
+Icon=mese-block-cult
+Terminal=false
+StartupNotify=false
+Categories=Education;

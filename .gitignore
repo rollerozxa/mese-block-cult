@@ -1,0 +1,6 @@
+app.asar
+
+package/pkg/
+package/src/
+package/*.pkg.tar.zst
+
